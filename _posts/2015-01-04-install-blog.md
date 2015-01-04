@@ -38,4 +38,4 @@ title: 당신의 타이틀
 `git push`
 
 #올린 블로그 확인
-브라우저에서 `http://사용자이름(예:manmyug).github.io` 연다.
+브라우저에서 `http://사용자이름(예:manmyung).github.io` 연다.
