@@ -2,7 +2,7 @@
 <urlset xmlns='http://www.sitemaps.org/schemas/sitemap/0.9'>
 <url>
 <loc>
-http://blogawesome.com/blog/404.html
+http://blogawesome.com/404.html
 </loc>
 <lastmod>
 2015-01-15
@@ -10,7 +10,7 @@ http://blogawesome.com/blog/404.html
 </url>
 <url>
 <loc>
-http://blogawesome.com/blog/archives.html
+http://blogawesome.com/archives.html
 </loc>
 <lastmod>
 2015-01-15
@@ -18,7 +18,7 @@ http://blogawesome.com/blog/archives.html
 </url>
 <url>
 <loc>
-http://blogawesome.com/blog/index.html
+http://blogawesome.com/index.html
 </loc>
 <lastmod>
 2015-01-15
@@ -26,7 +26,7 @@ http://blogawesome.com/blog/index.html
 </url>
 <url>
 <loc>
-http://blogawesome.com/blog/pages/about.html
+http://blogawesome.com/pages/about.html
 </loc>
 <lastmod>
 2015-01-15
@@ -34,7 +34,7 @@ http://blogawesome.com/blog/pages/about.html
 </url>
 <url>
 <loc>
-http://blogawesome.com/blog/pages/adoc-page.html
+http://blogawesome.com/pages/adoc-page.html
 </loc>
 <lastmod>
 2015-01-15
@@ -42,7 +42,7 @@ http://blogawesome.com/blog/pages/adoc-page.html
 </url>
 <url>
 <loc>
-http://blogawesome.com/blog/pages/another-page.html
+http://blogawesome.com/pages/another-page.html
 </loc>
 <lastmod>
 2015-01-15
@@ -50,7 +50,7 @@ http://blogawesome.com/blog/pages/another-page.html
 </url>
 <url>
 <loc>
-http://blogawesome.com/blog/posts/10-03-2014-first-post.html
+http://blogawesome.com/posts/10-03-2014-first-post.html
 </loc>
 <lastmod>
 2015-01-15
@@ -58,7 +58,7 @@ http://blogawesome.com/blog/posts/10-03-2014-first-post.html
 </url>
 <url>
 <loc>
-http://blogawesome.com/blog/posts/10-10-2014-adoc-post.html
+http://blogawesome.com/posts/10-10-2014-adoc-post.html
 </loc>
 <lastmod>
 2015-01-15
@@ -66,7 +66,7 @@ http://blogawesome.com/blog/posts/10-10-2014-adoc-post.html
 </url>
 <url>
 <loc>
-http://blogawesome.com/blog/posts/11-04-2014-second-post.html
+http://blogawesome.com/posts/11-04-2014-second-post.html
 </loc>
 <lastmod>
 2015-01-15
@@ -74,7 +74,7 @@ http://blogawesome.com/blog/posts/11-04-2014-second-post.html
 </url>
 <url>
 <loc>
-http://blogawesome.com/blog/posts/13-11-2014-docs.html
+http://blogawesome.com/posts/13-11-2014-docs.html
 </loc>
 <lastmod>
 2015-01-15
@@ -82,7 +82,7 @@ http://blogawesome.com/blog/posts/13-11-2014-docs.html
 </url>
 <url>
 <loc>
-http://blogawesome.com/blog/tags/asciidoc.html
+http://blogawesome.com/tags/asciidoc.html
 </loc>
 <lastmod>
 2015-01-15
@@ -90,7 +90,7 @@ http://blogawesome.com/blog/tags/asciidoc.html
 </url>
 <url>
 <loc>
-http://blogawesome.com/blog/tags/cryogen.html
+http://blogawesome.com/tags/cryogen.html
 </loc>
 <lastmod>
 2015-01-15
@@ -98,7 +98,7 @@ http://blogawesome.com/blog/tags/cryogen.html
 </url>
 <url>
 <loc>
-http://blogawesome.com/blog/tags/not fetch.html
+http://blogawesome.com/tags/not fetch.html
 </loc>
 <lastmod>
 2015-01-15
@@ -106,7 +106,7 @@ http://blogawesome.com/blog/tags/not fetch.html
 </url>
 <url>
 <loc>
-http://blogawesome.com/blog/tags/very fetch.html
+http://blogawesome.com/tags/very fetch.html
 </loc>
 <lastmod>
 2015-01-15
