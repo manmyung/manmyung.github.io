@@ -15,94 +15,26 @@ http://blogawesome.com/
 This blog is awesome
 </description>
 <lastBuildDate>
-Thu, 15 Jan 2015 01:28:13 +0900
+Thu, 15 Jan 2015 02:06:08 +0900
 </lastBuildDate>
 <author>
 Bob Bobbert
 </author>
 <item>
 <guid>
-http://blogawesome.com/posts/13-11-2014-docs.html
+http://blogawesome.com/posts/2015-01-11-post.html
 </guid>
 <link>
-http://blogawesome.com/posts/13-11-2014-docs.html
+http://blogawesome.com/posts/2015-01-11-post.html
 </link>
 <title>
-Using Cryogen
+4clojure 다시 풀기
 </title>
 <description>
-&lt;h2&gt;&lt;a name=&quot;features&quot;&gt;&lt;/a&gt;Features&lt;/h2&gt;&lt;ul&gt;&lt;li&gt;blog posts and pages with Markdown&lt;/li&gt;&lt;li&gt;tags&lt;/li&gt;&lt;li&gt;table of contents generation&lt;/li&gt;&lt;li&gt;Default Twitter Bootstrap theme&lt;/li&gt;&lt;li&gt;plain HTML page templates&lt;/li&gt;&lt;li&gt;code syntax highlighting&lt;/li&gt;&lt;li&gt;Disqus support&lt;/li&gt;&lt;li&gt;GitHub Gist integration&lt;/li&gt;&lt;li&gt;sitemap&lt;/li&gt;&lt;li&gt;Sass/SCSS compilation&lt;/li&gt;&lt;li&gt;RSS&lt;/li&gt;&lt;/ul&gt;&lt;h2&gt;&lt;a name=&quot;prerequisites&quot;&gt;&lt;/a&gt;Prerequisites&lt;/h2&gt;&lt;p&gt;You will need &lt;a href='https://github.com/technomancy/leiningen'&gt;Leiningen&lt;/a&gt; 2.5.0 or above installed.&lt;/p&gt;&lt;h2&gt;&lt;a name=&quot;usage&quot;&gt;&lt;/a&gt;Usage&lt;/h2&gt;&lt;h3&gt;&lt;a name=&quot;creating&amp;#95;a&amp;#95;new&amp;#95;site&quot;&gt;&lt;/a&gt;Creating a New Site&lt;/h3&gt;&lt;p&gt;A new site can be created using the Cryogen template as follows:&lt;/p&gt;&lt;pre&gt;&lt;code&gt;lein new cryogen my-blog
-&lt;/code&gt;&lt;/pre&gt;&lt;h3&gt;&lt;a name=&quot;running&amp;#95;the&amp;#95;server&quot;&gt;&lt;/a&gt;Running the Server&lt;/h3&gt;&lt;p&gt;The web server can be started using the &lt;code&gt;lein-ring&lt;/code&gt; plugin:&lt;/p&gt;&lt;pre&gt;&lt;code&gt;lein ring server
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;The server will watch for changes in the &lt;code&gt;resources/templates&lt;/code&gt; folder and recompile the content automatically.&lt;/p&gt;&lt;h3&gt;&lt;a name=&quot;site&amp;#95;configuration&quot;&gt;&lt;/a&gt;Site Configuration&lt;/h3&gt;&lt;p&gt;The site configuration file is found at &lt;code&gt;templates/config.edn&lt;/code&gt;, this file looks as follows:&lt;/p&gt;&lt;pre&gt;&lt;code class=&quot;clojure&quot;&gt;{:site-title       &amp;quot;My Awesome Blog&amp;quot;
- :author           &amp;quot;Bob Bobbert&amp;quot;
- :description      &amp;quot;This blog is awesome&amp;quot;
- :site-url         &amp;quot;http://blogawesome.com/&amp;quot;
- :post-root        &amp;quot;posts&amp;quot;
- :tag-root         &amp;quot;tags&amp;quot;
- :page-root        &amp;quot;pages&amp;quot;
- :blog-prefix      &amp;quot;/blog&amp;quot;
- :post-date-format &amp;quot;dd-MM-yyyy&amp;quot;
- :recent-posts     5
- :rss-name         &amp;quot;feed.xml&amp;quot;
- :rss-filters      &amp;#91;&amp;quot;clojure&amp;quot; &amp;quot;cryogen&amp;quot;&amp;#93;
- :sass-src         nil
- :sass-dest        nil
- :resources        &amp;#91;&amp;quot;css&amp;quot; &amp;quot;js&amp;quot; &amp;quot;img&amp;quot;&amp;#93;
- :keep-files       &amp;#91;&amp;quot;.git&amp;quot;&amp;#93; 
- :disqus?          false
- :disqus-shortname &amp;quot;&amp;quot;
- :ignored-files    &amp;#91;#&amp;quot;&amp;#94;\.#.&amp;#42;&amp;quot; #&amp;quot;.&amp;#42;\.swp$&amp;quot;&amp;#93;}
-&lt;/code&gt;&lt;/pre&gt;&lt;ul&gt;&lt;li&gt;&lt;code&gt;post-root&lt;/code&gt; - value prepended to all post uri's&lt;/li&gt;&lt;li&gt;&lt;code&gt;tag-root&lt;/code&gt; - value prepended to all tag uri's&lt;/li&gt;&lt;li&gt;&lt;code&gt;page-root&lt;/code&gt; - value prepended to all page uri's&lt;/li&gt;&lt;li&gt;&lt;code&gt;blog-prefix&lt;/code&gt; - prepended to all uri's (must start with slash), nil by default&lt;/li&gt;&lt;li&gt;&lt;code&gt;recent-posts&lt;/code&gt; - number of recent posts to display in the sidebar&lt;/li&gt;&lt;li&gt;&lt;code&gt;rss-name&lt;/code&gt; - name of the rss file generated, nil defaults to &lt;code&gt;rss.xml&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;code&gt;rss-filters&lt;/code&gt; - used to generate tag-based rss feeds for topic-specific rss aggregators. Tags listed here should match tags being used in your posts.&lt;/li&gt;&lt;li&gt;&lt;code&gt;recent-posts&lt;/code&gt; - the number of recent posts to show in the sidebar&lt;/li&gt;&lt;li&gt;&lt;code&gt;post-date-format&lt;/code&gt; - date format for your .md files, yyyy-MM-dd by default&lt;/li&gt;&lt;li&gt;&lt;code&gt;sass-src&lt;/code&gt; - directory containing sources of sass files to be  compiled - defaults to &quot;css&quot; - be sure to include this directory in  your &lt;code&gt;resources&lt;/code&gt; section&lt;/li&gt;&lt;li&gt;&lt;code&gt;sass-dest&lt;/code&gt; - directory where the compiled output CSS would be put    into. defaults to &quot;css&quot; - be sure to include this directory in    your &lt;code&gt;resources&lt;/code&gt; section&lt;/li&gt;&lt;li&gt;&lt;code&gt;resources&lt;/code&gt; - list of folders to be copied over from &lt;code&gt;templates&lt;/code&gt; to &lt;code&gt;public&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;code&gt;keep-files&lt;/code&gt; - list of folders or files that are not wiped in the &lt;code&gt;public&lt;/code&gt; directory. For example, this allows to keep a &lt;code&gt;.git&lt;/code&gt; directory there across recompiles of the site to versionize the generated files&lt;/li&gt;&lt;li&gt;&lt;code&gt;disqus?&lt;/code&gt; - set to true if you want disqus enabled on your site&lt;/li&gt;&lt;li&gt;&lt;code&gt;disqus-shortname&lt;/code&gt; - your disqus shortname&lt;/li&gt;&lt;li&gt;&lt;code&gt;ignored-files&lt;/code&gt; - list of regexps matching files the compiler should ignore&lt;/li&gt;&lt;/ul&gt;&lt;h3&gt;&lt;a name=&quot;creating&amp;#95;posts&quot;&gt;&lt;/a&gt;Creating Posts&lt;/h3&gt;&lt;p&gt;The posts are located in the &lt;code&gt;resources/templates/md/posts&lt;/code&gt;. Posts are written using Markdown and each post file should start with the date in the format of &lt;code&gt;dd-MM-yyyy&lt;/code&gt;. The compiler will link the posts in order for you using the dates. A valid post file might look as follows:&lt;/p&gt;&lt;pre&gt;&lt;code&gt;19-12-2014-post1.md
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;The post content must start with a map containing the post metadata:&lt;/p&gt;&lt;pre&gt;&lt;code class=&quot;clojure&quot;&gt;{:title &amp;quot;First Post!&amp;quot;
- :layout :post
- :tags  &amp;#91;&amp;quot;tag1&amp;quot; &amp;quot;tag3&amp;quot;&amp;#93;}
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;The metadata contains the following keys:&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;code&gt;:title&lt;/code&gt; - the title of the post&lt;/li&gt;&lt;li&gt;&lt;code&gt;:author&lt;/code&gt; - optional key to display the name of the author for the post&lt;/li&gt;&lt;li&gt;&lt;code&gt;:layout&lt;/code&gt; - the layout template to use for the post&lt;/li&gt;&lt;li&gt;&lt;code&gt;:tags&lt;/code&gt; - the tags associated with this post&lt;/li&gt;&lt;li&gt;&lt;code&gt;:toc&lt;/code&gt; - boolean indicating whether table of contents should be generated, defaults to false&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;The rest of the post should consist of valid Markdown content, eg:&lt;/p&gt;&lt;pre&gt;&lt;code&gt;## Hello World
-
-This is my first post!
-
-check out this sweet code
-
-    &amp;#40;defn foo &amp;#91;bar&amp;#93;
-      &amp;#40;bar&amp;#41;&amp;#41;
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-Nunc sodales pharetra massa, eget fringilla ex ornare et.
-Nunc mattis diam ac urna finibus sodales. Etiam sed ipsum
-et purus commodo bibendum. Cras libero magna, fringilla
-tristique quam sagittis, volutpat auctor mi. Aliquam luctus,
-nulla et vestibulum finibus, nibh justo semper tortor, nec
-vestibulum tortor est nec nisi.
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;If you wish to enable comments on your posts, create a &lt;a href='https://disqus.com/'&gt;disqus&lt;/a&gt; account and &lt;a href='https://disqus.com/admin/create/'&gt;register&lt;/a&gt; your blog. &lt;code&gt;disqus?&lt;/code&gt; should be set to &lt;code&gt;true&lt;/code&gt; in the config and you must add your &lt;code&gt;disqus-shortname&lt;/code&gt;. &lt;/p&gt;&lt;h3&gt;&lt;a name=&quot;creating&amp;#95;pages&quot;&gt;&lt;/a&gt;Creating Pages&lt;/h3&gt;&lt;p&gt;Pages work similarly to posts, but aren't grouped by date. An example page might be an about page.&lt;/p&gt;&lt;p&gt;The pages contain the following metadata:&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;code&gt;:title&lt;/code&gt; - the title of the page&lt;/li&gt;&lt;li&gt;&lt;code&gt;:layout&lt;/code&gt; - the layout template for the page&lt;/li&gt;&lt;li&gt;&lt;code&gt;:page-index&lt;/code&gt; - a number representing the order of the page in the navbar/sidebar&lt;/li&gt;&lt;li&gt;&lt;code&gt;:navbar?&lt;/code&gt; - determines whether the page should be shown in the navbar, &lt;code&gt;false&lt;/code&gt; by default&lt;/li&gt;&lt;li&gt;&lt;code&gt;:toc&lt;/code&gt; - boolean indicating whether table of contents should be generated, defaults to false&lt;/li&gt;&lt;/ul&gt;&lt;h3&gt;&lt;a name=&quot;customizing&amp;#95;layouts&quot;&gt;&lt;/a&gt;Customizing Layouts&lt;/h3&gt;&lt;p&gt;Cryogen uses &lt;a href='https://github.com/yogthos/Selmer'&gt;Selmer&lt;/a&gt; templating engine for layouts. Please refer to its documentation to see the supported tags and filters for the layouts.&lt;/p&gt;&lt;p&gt;The layouts are contained in the &lt;code&gt;resources/templates/html/layouts&lt;/code&gt; folder of the project. By default, the &lt;code&gt;base.html&lt;/code&gt; layout is used to provide the general layout for the site. This is where you would add static resources such as CSS and Js assets as well as define headers and footers for your site.&lt;/p&gt;&lt;p&gt;Each page layout should have a name that matches the &lt;code&gt;:layout&lt;/code&gt; key in the page metadata and end with &lt;code&gt;.html&lt;/code&gt;. Page layouts extend the base layout and should only contain the content relaveant to the page inside the &lt;code&gt;content&lt;/code&gt; block. For example, the &lt;code&gt;tag&lt;/code&gt; layout is located in &lt;code&gt;tag.html&lt;/code&gt; and looks as follows:&lt;/p&gt;&lt;pre&gt;&lt;code class=&quot;xml&quot;&gt;{% extends &amp;quot;templates/html/layouts/base.html&amp;quot; %}
-{% block content %}
-&amp;lt;div id=&amp;quot;posts-by-tag&amp;quot;&amp;gt;
-    &amp;lt;h2&amp;gt;Posts tagged {{name}}&amp;lt;/h2&amp;gt;
-    &amp;lt;ul&amp;gt;
-    {% for post in posts %}
-        &amp;lt;li&amp;gt;
-            &amp;lt;a href=&amp;quot;{{post.uri}}&amp;quot;&amp;gt;{{post.title}}&amp;lt;/a&amp;gt;
-        &amp;lt;/li&amp;gt;
-    {% endfor %}
-    &amp;lt;/ul&amp;gt;
-&amp;lt;/div&amp;gt;
-{% endblock %}
-&lt;/code&gt;&lt;/pre&gt;&lt;h3&gt;&lt;a name=&quot;code&amp;#95;syntax&amp;#95;highlighting&quot;&gt;&lt;/a&gt;Code Syntax Highlighting&lt;/h3&gt;&lt;p&gt;Cryogen uses &lt;a href='https://highlightjs.org/'&gt;Highlight.js&lt;/a&gt; for code syntax highlighting. You can add more languages by replacing &lt;code&gt;templates/js/highlight.pack.js&lt;/code&gt; with a customized package from &lt;a href='https://highlightjs.org/download/'&gt;here&lt;/a&gt;.&lt;/p&gt;&lt;p&gt;The &lt;code&gt; initHighlightingOnLoad&lt;/code&gt; function is called in &lt;code&gt;templates/html/layouts/base.html&lt;/code&gt;.&lt;/p&gt;&lt;pre&gt;&lt;code class=&quot;xml&quot;&gt;&amp;lt;script&amp;gt;hljs.initHighlightingOnLoad&amp;#40;&amp;#41;;&amp;lt;/script&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;h2&gt;&lt;a name=&quot;deploying&amp;#95;your&amp;#95;site&quot;&gt;&lt;/a&gt;Deploying Your Site&lt;/h2&gt;&lt;p&gt;The generated static content will be found under the &lt;code&gt;resources/public&lt;/code&gt; folder. Simply copy the content to a static folder for a server sugh as Nginx or Apache and your site is now ready for service.&lt;/p&gt;&lt;p&gt;A sample Nginx configuration that's placed in &lt;code&gt;/etc/nginx/sites-available/default&lt;/code&gt; can be seen below:&lt;/p&gt;&lt;pre&gt;&lt;code class=&quot;javascript&quot;&gt;server{
-  listen 80 default&amp;#95;server;
-  listen &amp;#91;::&amp;#93;:80 default&amp;#95;server ipv6only=on;
-  server&amp;#95;name localhost &amp;lt;yoursite.com&amp;gt; &amp;lt;www.yoursite.com&amp;gt;;
-
-  access&amp;#95;log /var/log/blog&amp;#95;access.log;
-  error&amp;#95;log /var/log/blog&amp;#95;error.log;
-
-  location / {
-    alias /var/blog/;
-    error&amp;#95;page    404 = /404.html;
-  }
-}
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Simply set &lt;code&gt;yoursite.com&lt;/code&gt; to the domain of your site in the above configuration and ensure the static content is available at &lt;code&gt;/var/blog/&lt;/code&gt;. Finally, place your custom error page in the &lt;code&gt;/var/blog/404.html&lt;/code&gt; file.&lt;/p&gt;&lt;h2&gt;&lt;a name=&quot;some&amp;#95;sites&amp;#95;made&amp;#95;with&amp;#95;cryogen&quot;&gt;&lt;/a&gt;Some Sites Made With Cryogen&lt;/h2&gt;&lt;ul&gt;&lt;li&gt;&lt;a href='http://carmenla.me/blog/index.html'&gt;My personal blog&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href='http://cryogenweb.org'&gt;Cryogen Documentation Site&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href='http://yogthos.net/'&gt;Yogthos blog&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href='http://www.clojure.tn'&gt;Clojure :in Tunisia&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href='http://dl1ely.github.io'&gt;dl1ely.github.io&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href='http://jonase.github.io/nil-recur'&gt;nil/recur&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href='http://tangrammer.github.io/'&gt;on the clojure move&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;
+ &lt;p&gt;Clojure를 처음 시작할 때 4clojure는 좋은 공부 방법 중 하나이다. 이유는 이 &lt;a href='http://clojure.or.kr/wiki/doku.php?id=lecture:4clojure:4clojure%EA%B0%80&amp;#95;clojure&amp;#95;%EA%B3%B5%EB%B6%80%EC%97%90&amp;#95;%EC%A2%8B%EC%9D%80&amp;#95;%EC%9D%B4%EC%9C%A0'&gt;링크&lt;/a&gt;에 잘 설명되어 있다.	실제 문제를 풀다 보니 여러 클로저 문법 중에서도 자주 쓰이는 것 위주로 효과적으로 익힐 수 있다.&lt;/p&gt;&lt;p&gt;4clojure에는 4단계가 있다. Elementary, Easy, Medium, Hard. 몇달 전에 클로저를 시작하면서 Easy까지 풀었었다. 최근 4clojure를 다시 보려니 두 가지 선택이 있었다. 첫째, Medium부터 풀기. 둘째, Elementary, Easy 복습하기. 이전에 푸는 것에만 급급하여 깊이있게 정리하지 못했다는 판단으로 복습하는 것을 선택했다.&lt;/p&gt;&lt;p&gt;다시 풀어보는 방향이 옳았다. 두번째 보니 다른 사람의 풀이가 눈에 들어온다. maximental, chouser, daowen 이 세 사람이 특히 좋았다. 혼자 풀어서는 생각하지 못할 클로저 또는 함수형 프로그래밍의 풀이방법을 체득할 수 있었다. 그리고 풀이에 대한 생각을 메모로 적어두다 보니 뒤의 문제를 풀때 앞의 문제가 도움이 되는 경우가 많았다. &lt;/p&gt;&lt;p&gt;고등학교 때 생각이 났다. 난 실력정석은 안 풀고, 기본정석의 예제와 유제만 반복해서 풀었다. 이 방법이 상대적으로 적은 시간으로 기본 개념을 튼튼히 하는데 도움이 되었다. 고시공부를 할때 2독, 3독 하는 이유도 이런 효율성 때문일 것이다. &lt;/p&gt;&lt;p&gt;문제풀이는 &lt;a href='https://github.com/manmyung/study-4clojure/tree/master/src/study&amp;#95;4clojure'&gt;https://github.com/manmyung/study-4clojure/tree/master/src/study&amp;#95;4clojure&lt;/a&gt; 에 모아져 있다. 문제를 푼 순서는 &lt;a href='https://github.com/manmyung/study-4clojure/blob/master/log.md'&gt;https://github.com/manmyung/study-4clojure/blob/master/log.md&lt;/a&gt; 이다.&lt;/p&gt;
 </description>
 <pubDate>
-Thu, 13 Nov 2014 00:00:00 +0900
+Sun, 11 Jan 2015 00:00:00 +0900
 </pubDate>
 <author>
 Bob Bobbert
@@ -110,106 +42,27 @@ Bob Bobbert
 </item>
 <item>
 <guid>
-http://blogawesome.com/posts/10-10-2014-adoc-post.html
+http://blogawesome.com/posts/2015-01-04-post.html
 </guid>
 <link>
-http://blogawesome.com/posts/10-10-2014-adoc-post.html
+http://blogawesome.com/posts/2015-01-04-post.html
 </link>
 <title>
-Adoc Post
+Github Pages와 Jekyll를 이용하여 블로그 만들기
 </title>
 <description>
-&lt;!-- toc disabled --&gt;
-&lt;div class=&quot;sect1&quot;&gt;
-&lt;h2 id=&quot;_example_asciidoc_post&quot;&gt;Example Asciidoc Post&lt;/h2&gt;
-&lt;div class=&quot;sectionbody&quot;&gt;
-&lt;div class=&quot;paragraph&quot;&gt;
-&lt;p&gt;This is an example asciidoc post.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&quot;sect2&quot;&gt;
-&lt;h3 id=&quot;_section_1&quot;&gt;Section 1&lt;/h3&gt;
-&lt;div class=&quot;paragraph&quot;&gt;
-&lt;div class=&quot;title&quot;&gt;Heading&lt;/div&gt;
-&lt;p&gt;With some text and maybe even a bulleted list:&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&quot;ulist&quot;&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;Thing 1&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Thing 2&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-&lt;div class=&quot;paragraph&quot;&gt;
-&lt;p&gt;Or how about some &lt;strong&gt;bold&lt;/strong&gt; or &lt;em&gt;italicized&lt;/em&gt; text?&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&quot;sect2&quot;&gt;
-&lt;h3 id=&quot;_section_2&quot;&gt;Section 2&lt;/h3&gt;
-&lt;div class=&quot;paragraph&quot;&gt;
-&lt;p&gt;Will a code snippet work?&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&quot;listingblock&quot;&gt;
-&lt;div class=&quot;title&quot;&gt;bash&lt;/div&gt;
-&lt;div class=&quot;content&quot;&gt;
-&lt;pre class=&quot;highlight&quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;$ echo &quot;foo&quot;&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&quot;listingblock&quot;&gt;
-&lt;div class=&quot;title&quot;&gt;clojure&lt;/div&gt;
-&lt;div class=&quot;content&quot;&gt;
-&lt;pre class=&quot;highlight&quot;&gt;&lt;code class=&quot;language-clojure&quot; data-lang=&quot;clojure&quot;&gt;(defn echo [s]
-  (println s))&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
+&lt;h2&gt;&lt;a name=&quot;github&amp;#95;repository&amp;#95;만들기&quot;&gt;&lt;/a&gt;Github repository 만들기&lt;/h2&gt;https://pages.github.com/ 에서 1,2번만 따라한다.&lt;h1&gt;&lt;a name=&quot;jekyll&amp;#95;설치&quot;&gt;&lt;/a&gt;Jekyll 설치&lt;/h1&gt;https://help.github.com/articles/using-jekyll-with-pages/ 에서 installing-jekyll 까지만 따라한다.&lt;h1&gt;&lt;a name=&quot;로컬에서&amp;#95;블로그&amp;#95;확인&quot;&gt;&lt;/a&gt;로컬에서 블로그 확인&lt;/h1&gt;&lt;code&gt;cd 사용자이름.github.io&lt;/code&gt;&lt;p&gt;&lt;code&gt;jekyll serve --watch&lt;/code&gt;&lt;/p&gt;&lt;p&gt;브라우저에서 &lt;code&gt;http://localhost:4000/&lt;/code&gt; 연다.&lt;/p&gt;&lt;h1&gt;&lt;a name=&quot;블로그&amp;#95;첫&amp;#95;페이지&amp;#95;바꾸기&quot;&gt;&lt;/a&gt;블로그 첫 페이지 바꾸기&lt;/h1&gt;&lt;code&gt;&amp;#95;config.yml&lt;/code&gt; 파일 수정&lt;h1&gt;&lt;a name=&quot;새&amp;#95;포스트&amp;#95;추가&quot;&gt;&lt;/a&gt;새 포스트 추가&lt;/h1&gt;&lt;code&gt;&amp;#95;posts&lt;/code&gt; 디렉토리에 &lt;code&gt;YYYY-MM-DD-name-of-post.md&lt;/code&gt; 파일 만든다.&lt;p&gt;&lt;code&gt;YYYY-MM-DD-name-of-post.md&lt;/code&gt; 파일에 다음 형식으로 내용 추가&lt;/p&gt;&lt;pre&gt;&lt;code class=&quot;txt&quot;&gt;---
+layout: post
+title: 당신의 타이틀
+---
+당신의 내용
+&lt;/code&gt;&lt;/pre&gt;&lt;h1&gt;&lt;a name=&quot;블로그&amp;#95;올리기&quot;&gt;&lt;/a&gt;블로그 올리기&lt;/h1&gt;&lt;pre&gt;&lt;code&gt;git add .
+git commit -m 'first'
+git push
+&lt;/code&gt;&lt;/pre&gt;&lt;h1&gt;&lt;a name=&quot;올린&amp;#95;블로그&amp;#95;확인&quot;&gt;&lt;/a&gt;올린 블로그 확인&lt;/h1&gt;브라우저에서 &lt;code&gt;http://사용자이름&amp;#40;예:manmyung&amp;#41;.github.io&lt;/code&gt; 연다.
 </description>
 <pubDate>
-Fri, 10 Oct 2014 00:00:00 +0900
-</pubDate>
-<author>
-Bob Bobbert
-</author>
-</item>
-<item>
-<guid>
-http://blogawesome.com/posts/11-04-2014-second-post.html
-</guid>
-<link>
-http://blogawesome.com/posts/11-04-2014-second-post.html
-</link>
-<title>
-Yet Another Post
-</title>
-<description>
-&lt;h3&gt;&lt;a name=&quot;this&amp;#95;post&amp;#95;so&amp;#95;fetch&quot;&gt;&lt;/a&gt;This Post So Fetch&lt;/h3&gt;&lt;p&gt;some more stuff happened&lt;/p&gt;
-</description>
-<pubDate>
-Fri, 11 Apr 2014 00:00:00 +0900
-</pubDate>
-<author>
-Bob Bobbert
-</author>
-</item>
-<item>
-<guid>
-http://blogawesome.com/posts/10-03-2014-first-post.html
-</guid>
-<link>
-http://blogawesome.com/posts/10-03-2014-first-post.html
-</link>
-<title>
-A Post
-</title>
-<description>
-&lt;h3&gt;&lt;a name=&quot;this&amp;#95;post&amp;#95;not&amp;#95;fetch&amp;#95;enough&quot;&gt;&lt;/a&gt;This Post Not Fetch Enough&lt;/h3&gt;&lt;p&gt;some stuff happened&lt;/p&gt;
-</description>
-<pubDate>
-Mon, 10 Mar 2014 00:00:00 +0900
+Sun, 04 Jan 2015 00:00:00 +0900
 </pubDate>
 <author>
 Bob Bobbert
