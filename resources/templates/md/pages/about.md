@@ -3,6 +3,5 @@
  :page-index 0
  :navbar? true}
 
-## Write something about something
-
-wow wow wow
+* Email: <manmyung@gmail.com>
+* Github: <https://github.com/manmyung>

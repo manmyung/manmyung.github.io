@@ -1,13 +1,15 @@
 body {
-    color: #555;
-    background-color: #f1f1f1;
+    color: #111;
+    background-color: #ffffff;
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-    font-size: 13px;
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 1.5;
 }
 
 #wrapper.container {
     margin: auto;
-    padding-top: 100px;
+    padding-top: 50px;
     min-height: 100%;
     position: relative;
 }
@@ -30,16 +32,16 @@ nav h1 {
 }
 
 #sidebar {
-    background-color: #fff;
-    border: 1px solid #cecece;
-    border-radius: 5px;
-    padding:10px;
+    background-color: #ffffff;
+    /*border: 1px solid #cecece;
+    border-radius: 5px;*/
+    padding:15px;
 }
 
 #content {
-    background-color: #fff;
-    border: 1px solid #cecece;
-    border-radius: 5px;
+    background-color: #ffffff;
+    /*border: 1px solid #cecece;
+    border-radius: 5px;*/
     padding:15px;
 }
 
@@ -49,15 +51,24 @@ nav h1 {
 }
 
 #post-header {
-    margin-bottom: 30px;
+    margin-bottom: 32px;
 }
-#post-header h2 {
-    font-size: 32px;
-    margin-bottom: -15px;
+#post-header h1 {
+    font-size: 36px;
+    margin-bottom: 0px;
 }
 #post-header #post-meta {
+    margin-top: 0px;
     float: right;
 }
+
+#post-content h1 { font-weight: 300; }
+#post-content h2 { font-weight: 300; }
+#post-content h3 { font-weight: 300; }
+#post-content h4 { font-weight: 300; }
+#post-content h5 { font-weight: 300; }
+#post-content h6 { font-weight: 300; }
+
 #page-header {
     margin-bottom: 30px;
 }

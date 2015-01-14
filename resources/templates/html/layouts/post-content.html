@@ -1,5 +1,5 @@
 <div id="post-header">
-    <h2>{{post.title}}</h2>
+    <h1>{{post.title}}</h1>
     <div id="post-meta">
         {% if post.author %}
         <div class="author">{{post.author}}</div>
@@ -7,7 +7,7 @@
         <div class="date">{{post.date|date:longDate}}</div>
     </div>
 </div>
-<div>
+<div id="post-content">
     {% if post.toc %}{{post.toc|safe}}{% endif %}
     {{post.content|safe}}
 </div>
