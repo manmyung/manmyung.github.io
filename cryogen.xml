@@ -6,7 +6,7 @@
 clj-rss
 </generator>
 <title>
-My Awesome Blog
+만명 블로그
 </title>
 <link>
 http://blogawesome.com/
@@ -15,10 +15,10 @@ http://blogawesome.com/
 This blog is awesome
 </description>
 <lastBuildDate>
-Thu, 15 Jan 2015 02:05:04 +0900
+Thu, 15 Jan 2015 02:51:52 +0900
 </lastBuildDate>
 <author>
-Bob Bobbert
+Manmyung Kim
 </author>
 </channel>
 </rss>
