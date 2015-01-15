@@ -3,5 +3,5 @@
  :page-index 0
  :navbar? true}
 
-* Email: <manmyung@gmail.com>
+* Email: manmyung@gmail.com
 * Github: <https://github.com/manmyung>

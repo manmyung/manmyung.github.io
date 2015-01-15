@@ -15,7 +15,7 @@ http://blogawesome.com/
 This blog is awesome
 </description>
 <lastBuildDate>
-Fri, 16 Jan 2015 00:38:59 +0900
+Fri, 16 Jan 2015 01:47:16 +0900
 </lastBuildDate>
 <author>
 Manmyung Kim
@@ -31,7 +31,15 @@ http://blogawesome.com/posts/2015-01-16-post.html
 블로그 엔진 교체
 </title>
 <description>
-&lt;p&gt;블로그 엔진을 Jekyll 에서 Cryogen 으로 바꿨다. &lt;/p&gt;
+&lt;p&gt;블로그 엔진을 Jekyll 에서 Cryogen 으로 바꿨다. 클로저로 구현되었기 때문에 내부 구조를 파악하면서 공부하기 위해서이다. 디자인 구현이 부트스트랩인 것도 마음에 들었다. 또한 'Web Development with Clojure' 책 저자가 옮겼다는 &lt;a href='http://yogthos.net/posts/2014-11-26-Moving-to-Cryogen.html'&gt;소식&lt;/a&gt;을 듣고 뽐뿌. &lt;/p&gt;&lt;p&gt;배포 서버로 Github Pages를 사용한다면 설치방법은 이렇다.&lt;/p&gt;&lt;h2&gt;&lt;a name=&quot;github&amp;#95;pages만들기&quot;&gt;&lt;/a&gt;Github Pages만들기&lt;/h2&gt;&lt;a href=&quot;https://pages.github.com/&quot;&gt;https://pages.github.com/&lt;/a&gt; 에서 1,2번만 따라한 후,&lt;p&gt;&lt;code&gt;git clone https://github.com/아이디/아이디.github.io.git&lt;/code&gt;&lt;/p&gt;&lt;h2&gt;&lt;a name=&quot;로컬에&amp;#95;cryogen&amp;#95;설치&quot;&gt;&lt;/a&gt;로컬에 Cryogen 설치&lt;/h2&gt;&lt;pre&gt;&lt;code&gt;lein new cryogen 아이디.github.io --force &amp;#40;참고: 이미 있는 directory이므로 --force 사용&amp;#41;
+cd 아이디.github.io
+lein ring server
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;그러면 &lt;code&gt;http://localhost:3000/&lt;/code&gt; 에서 볼 수 있다.&lt;/p&gt;&lt;h2&gt;&lt;a name=&quot;글&amp;#95;쓰기&quot;&gt;&lt;/a&gt;글 쓰기&lt;/h2&gt;&lt;code&gt;resources/templates/md/posts&lt;/code&gt; 디렉토리의 md 파일들을 참고하여 새로운 md 파일 추가.&lt;h2&gt;&lt;a name=&quot;github&amp;#95;pages에&amp;#95;배포&quot;&gt;&lt;/a&gt;Github Pages에 배포&lt;/h2&gt;&lt;code&gt;templates/config.edn&lt;/code&gt; 에서 &lt;code&gt;:blog-prefix&lt;/code&gt;를 &lt;code&gt;&amp;quot;&amp;quot;&lt;/code&gt; 로 세팅.&lt;pre&gt;&lt;code&gt;cd 아이디.github.io
+cp -r resources/public/&amp;#42; .
+git add --all .
+git commit -m '블라블라'
+git push
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;그러면 &lt;code&gt;http://아이디.github.io/&lt;/code&gt; 에서 볼 수 있다.&lt;/p&gt;&lt;h2&gt;&lt;a name=&quot;참고&quot;&gt;&lt;/a&gt;참고&lt;/h2&gt;&lt;ul&gt;&lt;li&gt;&lt;a href=&quot;http://cryogenweb.org/docs/getting-started.html&quot;&gt;http://cryogenweb.org/docs/getting-started.html&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;http://cryogenweb.org/docs/writing-posts.html&quot;&gt;http://cryogenweb.org/docs/writing-posts.html&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;http://cryogenweb.org/docs/deploying-to-github-pages.html&quot;&gt;http://cryogenweb.org/docs/deploying-to-github-pages.html&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;
 </description>
 <pubDate>
 Fri, 16 Jan 2015 00:00:00 +0900
@@ -112,15 +120,15 @@ http://blogawesome.com/posts/2015-01-04-post.html
 Github Pages와 Jekyll를 이용하여 블로그 만들기
 </title>
 <description>
-&lt;h1&gt;&lt;a name=&quot;github&amp;#95;repository&amp;#95;만들기&quot;&gt;&lt;/a&gt;Github repository 만들기&lt;/h1&gt;https://pages.github.com/ 에서 1,2번만 따라한다.&lt;h1&gt;&lt;a name=&quot;jekyll&amp;#95;설치&quot;&gt;&lt;/a&gt;Jekyll 설치&lt;/h1&gt;https://help.github.com/articles/using-jekyll-with-pages/ 에서 installing-jekyll 까지만 따라한다.&lt;h1&gt;&lt;a name=&quot;로컬에서&amp;#95;블로그&amp;#95;확인&quot;&gt;&lt;/a&gt;로컬에서 블로그 확인&lt;/h1&gt;&lt;code&gt;cd 사용자이름.github.io&lt;/code&gt;&lt;p&gt;&lt;code&gt;jekyll serve --watch&lt;/code&gt;&lt;/p&gt;&lt;p&gt;브라우저에서 &lt;code&gt;http://localhost:4000/&lt;/code&gt; 연다.&lt;/p&gt;&lt;h1&gt;&lt;a name=&quot;블로그&amp;#95;첫&amp;#95;페이지&amp;#95;바꾸기&quot;&gt;&lt;/a&gt;블로그 첫 페이지 바꾸기&lt;/h1&gt;&lt;code&gt;&amp;#95;config.yml&lt;/code&gt; 파일 수정&lt;h1&gt;&lt;a name=&quot;새&amp;#95;포스트&amp;#95;추가&quot;&gt;&lt;/a&gt;새 포스트 추가&lt;/h1&gt;&lt;code&gt;&amp;#95;posts&lt;/code&gt; 디렉토리에 &lt;code&gt;YYYY-MM-DD-name-of-post.md&lt;/code&gt; 파일 만든다.&lt;p&gt;&lt;code&gt;YYYY-MM-DD-name-of-post.md&lt;/code&gt; 파일에 다음 형식으로 내용 추가&lt;/p&gt;&lt;pre&gt;&lt;code class=&quot;txt&quot;&gt;---
+&lt;h2&gt;&lt;a name=&quot;github&amp;#95;repository&amp;#95;만들기&quot;&gt;&lt;/a&gt;Github repository 만들기&lt;/h2&gt;https://pages.github.com/ 에서 1,2번만 따라한다.&lt;h2&gt;&lt;a name=&quot;jekyll&amp;#95;설치&quot;&gt;&lt;/a&gt;Jekyll 설치&lt;/h2&gt;https://help.github.com/articles/using-jekyll-with-pages/ 에서 installing-jekyll 까지만 따라한다.&lt;h2&gt;&lt;a name=&quot;로컬에서&amp;#95;블로그&amp;#95;확인&quot;&gt;&lt;/a&gt;로컬에서 블로그 확인&lt;/h2&gt;&lt;code&gt;cd 사용자이름.github.io&lt;/code&gt;&lt;p&gt;&lt;code&gt;jekyll serve --watch&lt;/code&gt;&lt;/p&gt;&lt;p&gt;브라우저에서 &lt;code&gt;http://localhost:4000/&lt;/code&gt; 연다.&lt;/p&gt;&lt;h2&gt;&lt;a name=&quot;블로그&amp;#95;첫&amp;#95;페이지&amp;#95;바꾸기&quot;&gt;&lt;/a&gt;블로그 첫 페이지 바꾸기&lt;/h2&gt;&lt;code&gt;&amp;#95;config.yml&lt;/code&gt; 파일 수정&lt;h2&gt;&lt;a name=&quot;새&amp;#95;포스트&amp;#95;추가&quot;&gt;&lt;/a&gt;새 포스트 추가&lt;/h2&gt;&lt;code&gt;&amp;#95;posts&lt;/code&gt; 디렉토리에 &lt;code&gt;YYYY-MM-DD-name-of-post.md&lt;/code&gt; 파일 만든다.&lt;p&gt;&lt;code&gt;YYYY-MM-DD-name-of-post.md&lt;/code&gt; 파일에 다음 형식으로 내용 추가&lt;/p&gt;&lt;pre&gt;&lt;code class=&quot;txt&quot;&gt;---
 layout: post
 title: blahblah
 ---
 blahblah
-&lt;/code&gt;&lt;/pre&gt;&lt;h1&gt;&lt;a name=&quot;블로그&amp;#95;올리기&quot;&gt;&lt;/a&gt;블로그 올리기&lt;/h1&gt;&lt;pre&gt;&lt;code&gt;git add .
+&lt;/code&gt;&lt;/pre&gt;&lt;h2&gt;&lt;a name=&quot;블로그&amp;#95;올리기&quot;&gt;&lt;/a&gt;블로그 올리기&lt;/h2&gt;&lt;pre&gt;&lt;code&gt;git add .
 git commit -m 'first'
 git push
-&lt;/code&gt;&lt;/pre&gt;&lt;h1&gt;&lt;a name=&quot;올린&amp;#95;블로그&amp;#95;확인&quot;&gt;&lt;/a&gt;올린 블로그 확인&lt;/h1&gt;브라우저에서 &lt;code&gt;http://사용자이름&amp;#40;예:manmyung&amp;#41;.github.io&lt;/code&gt; 연다.
+&lt;/code&gt;&lt;/pre&gt;&lt;h2&gt;&lt;a name=&quot;올린&amp;#95;블로그&amp;#95;확인&quot;&gt;&lt;/a&gt;올린 블로그 확인&lt;/h2&gt;브라우저에서 &lt;code&gt;http://사용자이름&amp;#40;예:manmyung&amp;#41;.github.io&lt;/code&gt; 연다.
 </description>
 <pubDate>
 Sun, 04 Jan 2015 00:00:00 +0900
