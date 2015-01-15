@@ -15,7 +15,7 @@ http://blogawesome.com/
 This blog is awesome
 </description>
 <lastBuildDate>
-Fri, 16 Jan 2015 01:47:16 +0900
+Fri, 16 Jan 2015 01:53:00 +0900
 </lastBuildDate>
 <author>
 Manmyung Kim
@@ -31,10 +31,10 @@ http://blogawesome.com/posts/2015-01-16-post.html
 블로그 엔진 교체
 </title>
 <description>
-&lt;p&gt;블로그 엔진을 Jekyll 에서 Cryogen 으로 바꿨다. 클로저로 구현되었기 때문에 내부 구조를 파악하면서 공부하기 위해서이다. 디자인 구현이 부트스트랩인 것도 마음에 들었다. 또한 'Web Development with Clojure' 책 저자가 옮겼다는 &lt;a href='http://yogthos.net/posts/2014-11-26-Moving-to-Cryogen.html'&gt;소식&lt;/a&gt;을 듣고 뽐뿌. &lt;/p&gt;&lt;p&gt;배포 서버로 Github Pages를 사용한다면 설치방법은 이렇다.&lt;/p&gt;&lt;h2&gt;&lt;a name=&quot;github&amp;#95;pages만들기&quot;&gt;&lt;/a&gt;Github Pages만들기&lt;/h2&gt;&lt;a href=&quot;https://pages.github.com/&quot;&gt;https://pages.github.com/&lt;/a&gt; 에서 1,2번만 따라한 후,&lt;p&gt;&lt;code&gt;git clone https://github.com/아이디/아이디.github.io.git&lt;/code&gt;&lt;/p&gt;&lt;h2&gt;&lt;a name=&quot;로컬에&amp;#95;cryogen&amp;#95;설치&quot;&gt;&lt;/a&gt;로컬에 Cryogen 설치&lt;/h2&gt;&lt;pre&gt;&lt;code&gt;lein new cryogen 아이디.github.io --force &amp;#40;참고: 이미 있는 directory이므로 --force 사용&amp;#41;
+&lt;p&gt;블로그 엔진을 Jekyll 에서 Cryogen 으로 바꿨다. 클로저로 구현되었기 때문에 내부 구조를 파악하면서 공부하기 위해서이다. 디자인 구현이 부트스트랩인 것도 마음에 들었다. 또한 'Web Development with Clojure' 책 저자가 옮겼다는 &lt;a href='http://yogthos.net/posts/2014-11-26-Moving-to-Cryogen.html'&gt;소식&lt;/a&gt;을 듣고 뽐뿌. &lt;/p&gt;&lt;p&gt;배포 서버로 Github Pages를 사용한다면 설치방법은 이렇다.&lt;/p&gt;&lt;h2&gt;&lt;a name=&quot;github&amp;#95;pages만들기&quot;&gt;&lt;/a&gt;Github Pages만들기&lt;/h2&gt;&lt;a href=&quot;https://pages.github.com/&quot;&gt;https://pages.github.com/&lt;/a&gt; 에서 1,2번만 따라함.&lt;p&gt;&lt;code&gt;git clone https://github.com/아이디/아이디.github.io.git&lt;/code&gt;&lt;/p&gt;&lt;h2&gt;&lt;a name=&quot;로컬에&amp;#95;cryogen&amp;#95;설치&quot;&gt;&lt;/a&gt;로컬에 Cryogen 설치&lt;/h2&gt;&lt;pre&gt;&lt;code&gt;lein new cryogen 아이디.github.io --force &amp;#40;참고: 이미 있는 directory이므로 --force 사용&amp;#41;
 cd 아이디.github.io
 lein ring server
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;그러면 &lt;code&gt;http://localhost:3000/&lt;/code&gt; 에서 볼 수 있다.&lt;/p&gt;&lt;h2&gt;&lt;a name=&quot;글&amp;#95;쓰기&quot;&gt;&lt;/a&gt;글 쓰기&lt;/h2&gt;&lt;code&gt;resources/templates/md/posts&lt;/code&gt; 디렉토리의 md 파일들을 참고하여 새로운 md 파일 추가.&lt;h2&gt;&lt;a name=&quot;github&amp;#95;pages에&amp;#95;배포&quot;&gt;&lt;/a&gt;Github Pages에 배포&lt;/h2&gt;&lt;code&gt;templates/config.edn&lt;/code&gt; 에서 &lt;code&gt;:blog-prefix&lt;/code&gt;를 &lt;code&gt;&amp;quot;&amp;quot;&lt;/code&gt; 로 세팅.&lt;pre&gt;&lt;code&gt;cd 아이디.github.io
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;그러면 &lt;code&gt;http://localhost:3000/&lt;/code&gt; 에서 볼 수 있다.&lt;/p&gt;&lt;h2&gt;&lt;a name=&quot;글&amp;#95;쓰기&quot;&gt;&lt;/a&gt;글 쓰기&lt;/h2&gt;&lt;code&gt;resources/templates/md/posts&lt;/code&gt; 디렉토리의 md 파일들을 참고하여 새로운 md 파일 추가.&lt;h2&gt;&lt;a name=&quot;github&amp;#95;pages에&amp;#95;배포&quot;&gt;&lt;/a&gt;Github Pages에 배포&lt;/h2&gt;&lt;code&gt;templates/config.edn&lt;/code&gt; 에서 &lt;code&gt;:blog-prefix&lt;/code&gt;를 &lt;code&gt;&amp;quot;&amp;quot;&lt;/code&gt; 로 세팅.&lt;p&gt;&lt;code&gt;.gitignore&lt;/code&gt;에 &lt;code&gt;/resources/public/&lt;/code&gt; 추가.&lt;/p&gt;&lt;pre&gt;&lt;code&gt;cd 아이디.github.io
 cp -r resources/public/&amp;#42; .
 git add --all .
 git commit -m '블라블라'
