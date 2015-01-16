@@ -11,6 +11,9 @@
     {% if post.toc %}{{post.toc|safe}}{% endif %}
     {{post.content|safe}}
 </div>
+<div id="post-hr">
+<hr>
+</div>
 {% if post.tags|not-empty %}
 <div id="post-tags">
     <b>Tags: </b>
