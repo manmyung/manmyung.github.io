@@ -69,6 +69,8 @@ nav h1 {
 #post-content h5 { font-weight: 300; }
 #post-content h6 { font-weight: 300; }
 
+#post-content img { max-width: 100%; }
+
 #post-hr hr {
     border-width: 1px;
     border-color: #CCCCCC;
