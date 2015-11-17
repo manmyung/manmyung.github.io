@@ -15,7 +15,7 @@ http://blogawesome.com/
 This blog is awesome
 </description>
 <lastBuildDate>
-Tue, 17 Nov 2015 23:32:35 +0900
+Tue, 17 Nov 2015 23:39:37 +0900
 </lastBuildDate>
 <author>
 Manmyung Kim
@@ -32,7 +32,7 @@ http://blogawesome.com/posts/2015-11-17-post.html
 </title>
 <description>
 &lt;h2&gt;&lt;a name=&quot;1.&amp;#95;java&amp;#95;설치&quot;&gt;&lt;/a&gt;1. Java 설치&lt;/h2&gt;클로저를 사용하려면 Java 1.6 이상의 버전이 필요하다.&lt;pre&gt;&lt;code&gt;$ java -version
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;명령창에서 위 명령을 실행해 본다. 만약 Java가 설치되어 있지 않거나 버전이 1.6 미만이면, &lt;a href=&quot;http://www.oracle.com/technetwork/java/javase/downloads/index.html&quot;&gt;http://www.oracle.com/technetwork/java/javase/downloads/index.html&lt;/a&gt; 에서 최신 버전의 JDK를 설치한다.&lt;/p&gt;&lt;h2&gt;&lt;a name=&quot;2.&amp;#95;leiningen&amp;#95;설치&quot;&gt;&lt;/a&gt;2. Leiningen 설치&lt;/h2&gt;Leiningen(라이닝언)은 클로저 프로젝트를 빌드하고 관리하는 툴로써, 클로저를 사용하는 가장 일반적인 방법이다. 설치 방법은 &lt;a href='http://leiningen.org/'&gt;Leiningen 웹 사이트&lt;/a&gt;의 Install 부분에 있다. 간단한 설치 방법은 아래와 같다.&lt;br&gt;&lt;br&gt;&lt;ul&gt;&lt;li&gt;맥과 리눅스는 다음처럼 실행한다. &lt;code&gt;/usr/local/bin&lt;/code&gt; 경로는 사용자에 따라 바뀔 수 있다.&lt;pre&gt;&lt;code&gt;$ wget https://raw.githubusercontent.com/technomancy/leiningen/stable/bin/lein
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;명령창에서 위 명령을 실행해 본다. 만약 Java가 설치되어 있지 않거나 버전이 1.6 미만이면, &lt;a href=&quot;http://www.oracle.com/technetwork/java/javase/downloads/index.html&quot;&gt;http://www.oracle.com/technetwork/java/javase/downloads/index.html&lt;/a&gt; 에서 최신 버전의 JDK를 설치한다.&lt;/p&gt;&lt;h2&gt;&lt;a name=&quot;2.&amp;#95;leiningen&amp;#95;설치&quot;&gt;&lt;/a&gt;2. Leiningen 설치&lt;/h2&gt;Leiningen(라이닝언)은 클로저 프로젝트를 빌드하고 관리하는 툴로써, 클로저를 사용하는 가장 일반적인 방법이다. &lt;a href='http://leiningen.org/'&gt;Leiningen 웹 사이트&lt;/a&gt;의 Install 부분에 설치 방법이 나온다. 간단한 설치 방법은 아래와 같다.&lt;br&gt;&lt;br&gt;&lt;ul&gt;&lt;li&gt;맥과 리눅스는 다음처럼 실행한다. &lt;code&gt;/usr/local/bin&lt;/code&gt; 경로는 사용자에 따라 바뀔 수 있다.&lt;pre&gt;&lt;code&gt;$ wget https://raw.githubusercontent.com/technomancy/leiningen/stable/bin/lein
 $ chmod +x lein
 $ mv lein /usr/local/bin
 $ lein
