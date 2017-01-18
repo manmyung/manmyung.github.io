@@ -11,11 +11,11 @@ twitter_username: manmyung
 github_username: manmyung
 
 # Build settings
-markdown: redcarpet
-redcarpet:
-  extensions: ["no_intra_emphasis", "tables", "autolink", "strikethrough", "with_toc_data"]
-
-highlighter: pygments
-
+github: [metadata]
+kramdown:
+  input: GFM
+  hard_wrap: false
 gems:
+  - jekyll-coffeescript
+  - jekyll-paginate
   - jekyll-redirect-from
