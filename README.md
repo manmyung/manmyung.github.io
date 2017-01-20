@@ -1,9 +1,11 @@
-# Jekyll 로컬에서 돌리기
+https://manmyung.github.io/
+
+# Jekyll 로컬에서 실행하려면
 <https://help.github.com/articles/setting-up-your-github-pages-site-locally-with-jekyll/>
 
 ## ruby 설치
-brew 로 설치되는 ruby 버전인 2.4.0은 맥의 보안정책 변화때문에 json 1.8.3 설치에서 막힌다.
-그래서 2.3.3을 다음 방식으로 깔았다. 참고: <https://gorails.com/setup/osx/10.12-sierra>
+현재 brew 로 설치되는 ruby 버전인 2.4.0은 맥의 보안정책 변화때문에 json 1.8.3 설치에서 막힌다.
+그래서 2.3.3을 다음 방식으로 설치. <https://gorails.com/setup/osx/10.12-sierra>
 
 ```
 $ brew install rbenv ruby-build
@@ -20,13 +22,13 @@ $ ruby -v
 $ gem install bundler
 ```
 
-## bundler로 jekyll 깔기
+## bundler로 jekyll 설치
 ```
 $ cd manmyung.github.io
 $ bundle install
 ```
 
-## jekyll 구동
+## jekyll 실행
 ```
 $ bundle exec jekyll serve
 ```
