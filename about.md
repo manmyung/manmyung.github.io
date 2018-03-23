@@ -9,3 +9,4 @@ permalink: /about/
 - Email: <manmyung@gmail.com>
 - Github: <https://github.com/manmyung>
 - Twitter: [@manmyung](https://twitter.com/manmyung)
+- Research: <http://mrl.snu.ac.kr/~mmkim/>
